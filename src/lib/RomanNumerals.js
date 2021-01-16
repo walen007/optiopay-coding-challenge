@@ -13,15 +13,9 @@ const RomanNumerals = {
 
   numerals: { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 },
 
-  _generate(num, romanGroup) {
-    const group = {
-      [this.constants.UNITS]: 'IVX',
-      [this.constants.TENS]: 'XLC',
-      [this.constants.HUNDREDS]: 'CDM',
-    };
-
-    const roman = group[romanGroup];
-
+  _generate(num, idx) {
+    const group = { 0: 'IVX', 1: 'XLC', 2: 'CDM' };
+    const roman = group[idx];
     switch (num) {
       case 1:
         return roman[0];
@@ -59,23 +53,10 @@ const RomanNumerals = {
     for (let i = 0; i < units.length; i++) {
       if (units[i] === '0') continue;
 
-      switch (this.values[i]) {
-        case this.constants.UNITS:
-          result =
-            this._generate(Number(units[i]), this.constants.UNITS) + result;
-          break;
-        case this.constants.TENS:
-          result =
-            this._generate(Number(units[i]), this.constants.TENS) + result;
-          break;
-        case this.constants.HUNDREDS:
-          result =
-            this._generate(Number(units[i]), this.constants.HUNDREDS) + result;
-          break;
-        case this.constants.THOUSANDS:
-          result = 'M'.repeat(Number(units[i])) + result;
-          break;
-        default:
+      if (i < 3) {
+        result = this._generate(+units[i], i) + result;
+      } else {
+        result = 'M'.repeat(+units[i]) + result;
       }
     }
 
