@@ -7,8 +7,9 @@ const notSupported = 'Only numbers between 1-4999 are supported.';
 
 describe('RomanNumerals', () => {
   describe('toRoman()', () => {
-    it('-- should convert integer number to Roman numbers', () => {
+    it('-- should convert integer to Roman numbers', () => {
       expect(RomanNumerals.toRoman(1)).toBe('I');
+      expect(RomanNumerals.toRoman(1000)).toBe('M');
       expect(RomanNumerals.toRoman(2009)).toBe('MMIX');
       expect(RomanNumerals.toRoman(4999)).toBe('MMMMCMXCIX');
       expect(RomanNumerals.toRoman(2008)).toBe('MMVIII');
@@ -31,8 +32,9 @@ describe('RomanNumerals', () => {
   });
 
   describe('fromRoman()', () => {
-    it('-- should validate fromRoman()', () => {
+    it('-- should convert Roman number to integer', () => {
       expect(RomanNumerals.fromRoman('I')).toBe(1);
+      expect(RomanNumerals.fromRoman('M')).toBe(1000);
       expect(RomanNumerals.fromRoman('MMIX')).toBe(2009);
       expect(RomanNumerals.fromRoman('MMMMCMXCIX')).toBe(4999);
       expect(RomanNumerals.fromRoman('MMVIII')).toBe(2008);
