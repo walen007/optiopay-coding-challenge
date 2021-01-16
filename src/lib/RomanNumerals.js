@@ -1,21 +1,9 @@
 // ES6 object literal
 const RomanNumerals = {
-  constants: {
-    UNITS: 'Units',
-    TENS: 'Tens',
-    HUNDREDS: 'Hundreds',
-    THOUSANDS: 'Thousands',
-  },
-
-  get values() {
-    return Object.values(this.constants);
-  },
-
   numerals: { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 },
 
-  _generate(num, idx) {
-    const group = { 0: 'IVX', 1: 'XLC', 2: 'CDM' };
-    const roman = group[idx];
+  _generate(num, i) {
+    const roman = { 0: 'IVX', 1: 'XLC', 2: 'CDM' }[i];
     switch (num) {
       case 1:
         return roman[0];
