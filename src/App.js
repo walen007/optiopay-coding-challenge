@@ -1,11 +1,11 @@
-import RomanNumeralsConverter from './components/RomanNumeralsConverter';
+import Header from './components/organisms/Header';
+import RomanNumeralsConverter from './components/organisms/RomanNumeralsConverter';
 
-function App() {
-  return (
-    <main data-testid="main" className="main">
-      <RomanNumeralsConverter />
-    </main>
-  );
-}
+const App = () => (
+  <main data-testid="main">
+    <Header title="Roman Numerals Converter" />
+    <RomanNumeralsConverter />
+  </main>
+);
 
 export default App;

@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #dadada;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
