@@ -5,7 +5,7 @@ import './styles.css';
 
 const Header = ({ id, title }) => (
   <header id={id} data-testid={id}>
-    <Text text={title} />
+    <Text>{title}</Text>
   </header>
 );
 

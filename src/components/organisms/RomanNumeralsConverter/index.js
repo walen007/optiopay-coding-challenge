@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import ConversionResult from '../../molecules/ConversionResult';
 import Input from '../../atoms/Input';
+import ConversionResult from '../../molecules/ConversionResult';
+import WidgetHeader from '../../molecules/WidgetHeader';
 import RomanNumerals from '../../../lib/RomanNumerals';
 import './styles.css';
 
-const RomanNumeralsConverter = ({ id }) => {
+const INTRO =
+  'This converter allows you to convert integer to Roman numrals and vice versa.';
+const INSTRUCTION = '';
+
+const Converter = ({ id }) => {
   const [result, setResult] = useState('');
 
   const handleChange = input => {
@@ -14,21 +19,24 @@ const RomanNumeralsConverter = ({ id }) => {
   };
 
   return (
-    <div id={id} data-testid={id} className="converter">
-      <Input
-        placeholder="Enter integer or Roman numeral"
-        handleChange={e => handleChange(e.target.value)}
-      />
-      <ConversionResult
-        result={result.toString().replace('Error: ', '')}
-        color={result.toString().startsWith('Error') ? 'red' : 'green'}
-      />
-    </div>
+    <>
+      <WidgetHeader intro={INTRO} instruction={INSTRUCTION} />
+      <div id={id} data-testid={id} className="converter">
+        <Input
+          placeholder="Enter integer or Roman numeral"
+          handleChange={e => handleChange(e.target.value)}
+        />
+        <ConversionResult
+          result={result.toString().replace('Error: ', '')}
+          color={result.toString().startsWith('Error') ? 'red' : 'green'}
+        />
+      </div>
+    </>
   );
 };
 
-ConversionResult.propTypes = {
+Converter.propTypes = {
   id: PropTypes.string,
 };
 
-export default RomanNumeralsConverter;
+export default Converter;

@@ -4,7 +4,7 @@ import Text from '../../atoms/Text';
 
 const ConversionResult = ({ id, color, result }) => (
   <div id={id} data-testid={id} style={{ color }}>
-    <Text text={result} />
+    <Text>{result}</Text>
   </div>
 );
 
