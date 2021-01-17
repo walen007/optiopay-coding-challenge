@@ -10,7 +10,7 @@ const INTRO = 'Welcome to the Roman Numerals Converter.';
 const INSTRUCTION = `
   This converter allows you to convert integers to Roman 
   numerals and vice versa.  
-  Numbers between 1-4999 are supported at the moment.
+  Only numbers between 1-4999 are supported at the moment.
 `;
 
 const Converter = ({ id }) => {
