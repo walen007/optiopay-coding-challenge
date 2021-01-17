@@ -57,7 +57,7 @@ const RomanNumerals = {
     const roman = romanNumeral.toString().toUpperCase();
 
     if (rgxValidChars.test(roman))
-      return 'Please enter only valid Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
+      return 'Please enter only valid integer or Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
     if (rgxValidFormat.test(roman))
       return 'Your Roman numeral contains invalid format.';
 
