@@ -20,8 +20,8 @@ const RomanNumeralsConverter = ({ id }) => {
         handleChange={e => handleChange(e.target.value)}
       />
       <ConversionResult
-        result={result}
-        color={result.length > 20 ? 'red' : 'green'}
+        result={result.toString().replace('Error: ', '')}
+        color={result.toString().startsWith('Error') ? 'red' : 'green'}
       />
     </div>
   );

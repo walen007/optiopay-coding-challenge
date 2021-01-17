@@ -31,9 +31,9 @@ const RomanNumerals = {
   toRoman(number) {
     const regx = /[^0-9]/g;
     if (number < 1 || number > 4999)
-      return 'Only numbers between 1-4999 are supported.';
+      return 'Error: Only numbers between 1-4999 are supported.';
     if (typeof number !== 'number' || regx.test(number.toString()))
-      return 'Please enter only numbers.';
+      return 'Error: Please enter only numbers.';
 
     let result = '';
     let units = number.toString().split('').reverse();
@@ -57,9 +57,9 @@ const RomanNumerals = {
     const roman = romanNumeral.toString().toUpperCase();
 
     if (rgxValidChars.test(roman))
-      return 'Please enter only valid integer or Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
+      return 'Error: Please enter only valid integer or Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
     if (rgxValidFormat.test(roman))
-      return 'Your Roman numeral contains invalid format.';
+      return 'Error: Your Roman numeral contains invalid format.';
 
     let result = 0;
     for (let i = 0; i < roman.length; i++) {

@@ -1,10 +1,10 @@
 import RomanNumerals from './RomanNumerals';
 
-const onlyNums = 'Please enter only numbers.';
+const onlyNums = 'Error: Please enter only numbers.';
 const onlyRoman =
-  'Please enter only valid integer or Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
-const notSupported = 'Only numbers between 1-4999 are supported.';
-const invalidFormat = 'Your Roman numeral contains invalid format.';
+  'Error: Please enter only valid integer or Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
+const notSupported = 'Error: Only numbers between 1-4999 are supported.';
+const invalidFormat = 'Error: Your Roman numeral contains invalid format.';
 
 describe('RomanNumerals', () => {
   describe('toRoman()', () => {
