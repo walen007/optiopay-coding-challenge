@@ -53,7 +53,7 @@ const RomanNumerals = {
 
   fromRoman(romanNumeral) {
     const rgxValidChars = /[^IVXLCDM]/gi;
-    const rgxValidFormat = /((I{4,}|V{2,}|X{4,}|L{2,}|C{4,}|D{2,}|M{5,})|V+(?=X+)|[IV]+(?=L+)|[IV]+(?=C+)|[IVXL]+(?=D+)|[IVXL]+(?=M+))/gi;
+    const rgxValidFormat = /((I{4,}|V{2,}|X{4,}|L{2,}|C{4,}|D{2,}|M{5,})|I{2,}(?=X+)|V+(?=X+)|[IV]+(?=L+)|[IV]+(?=C+)|[IVXL]+(?=D+)|[IVXL]+(?=M+))/gi;
     const roman = romanNumeral.toString().toUpperCase();
 
     if (rgxValidChars.test(roman))

@@ -4,6 +4,7 @@ const onlyNums = 'Please enter only numbers.';
 const onlyRoman =
   'Please enter only valid Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
 const notSupported = 'Only numbers between 1-4999 are supported.';
+const invalidFormat = 'Your Roman numeral contains invalid format.';
 
 describe('RomanNumerals', () => {
   describe('toRoman()', () => {
@@ -42,6 +43,15 @@ describe('RomanNumerals', () => {
 
     it('-- should reject non-roman numerals', () => {
       expect(RomanNumerals.fromRoman('MMIHX')).toBe(onlyRoman);
+      expect(RomanNumerals.fromRoman('MMNL')).toBe(onlyRoman);
+      expect(RomanNumerals.fromRoman('CCUI')).toBe(onlyRoman);
+    });
+
+    it('-- should reject invalid Roman numeral format', () => {
+      expect(RomanNumerals.fromRoman('IIII')).toBe(invalidFormat);
+      expect(RomanNumerals.fromRoman('IIX')).toBe(invalidFormat);
+      expect(RomanNumerals.fromRoman('IXD')).toBe(invalidFormat);
+      expect(RomanNumerals.fromRoman('LM')).toBe(invalidFormat);
     });
   });
 
