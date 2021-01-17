@@ -1,0 +1,25 @@
+.widget-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.intro,
+.instruction {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  margin: 20px;
+}
+
+.intro {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.instruction {
+  font-size: 1.3rem;
+}
