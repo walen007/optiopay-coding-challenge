@@ -6,9 +6,12 @@ import WidgetHeader from '../../molecules/WidgetHeader';
 import RomanNumerals from '../../../lib/RomanNumerals';
 import './styles.css';
 
-const INTRO =
-  'This converter allows you to convert integer to Roman numrals and vice versa.';
-const INSTRUCTION = '';
+const INTRO = 'Welcome to the Roman Numerals Converter.';
+const INSTRUCTION = `
+  This converter allows you to convert integers to Roman 
+  numerals and vice versa.  
+  Numbers between 1-4999 are supported at the moment.
+`;
 
 const Converter = ({ id }) => {
   const [result, setResult] = useState('');
