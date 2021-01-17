@@ -2,12 +2,12 @@ import RomanNumerals from './RomanNumerals';
 
 const onlyNums = 'Please enter only numbers.';
 const onlyRoman =
-  'Please enter only valid Roman numbers. Only the following Roman numbers are accepted "IVXLCDM".';
+  'Please enter only valid Roman numeral. Only the following Roman numerals are accepted I,V,X,L,C,D,M.';
 const notSupported = 'Only numbers between 1-4999 are supported.';
 
 describe('RomanNumerals', () => {
   describe('toRoman()', () => {
-    it('-- should convert integer to Roman numbers', () => {
+    it('-- should convert integer to Roman numeral', () => {
       expect(RomanNumerals.toRoman(1)).toBe('I');
       expect(RomanNumerals.toRoman(1000)).toBe('M');
       expect(RomanNumerals.toRoman(2009)).toBe('MMIX');
@@ -32,7 +32,7 @@ describe('RomanNumerals', () => {
   });
 
   describe('fromRoman()', () => {
-    it('-- should convert Roman number to integer', () => {
+    it('-- should convert Roman numeral to integer', () => {
       expect(RomanNumerals.fromRoman('I')).toBe(1);
       expect(RomanNumerals.fromRoman('M')).toBe(1000);
       expect(RomanNumerals.fromRoman('MMIX')).toBe(2009);
@@ -40,8 +40,18 @@ describe('RomanNumerals', () => {
       expect(RomanNumerals.fromRoman('MMVIII')).toBe(2008);
     });
 
-    it('-- should reject non-roman numbers', () => {
+    it('-- should reject non-roman numerals', () => {
       expect(RomanNumerals.fromRoman('MMIHX')).toBe(onlyRoman);
+    });
+  });
+
+  describe('Reverse Validation', () => {
+    it('-- should reverse validate all valid integer and roman numerals 1-4999', () => {
+      // This small set can be tested without issues but
+      // this type of test is not advisable for larger sets.
+      for (let i = 1; i < 5000; i++) {
+        expect(i).toBe(RomanNumerals.fromRoman(RomanNumerals.toRoman(i)));
+      }
     });
   });
 });
