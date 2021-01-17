@@ -3,8 +3,9 @@ import Header from '../';
 
 describe('<Header />', () => {
   it('-- should render <Header />', () => {
-    render(<Header id="header001" title="Sample header title" />);
-    const converter = screen.getByTestId('header001');
-    expect(converter).toBeInTheDocument();
+    const title = 'Sample header title';
+    render(<Header id="header001" title={title} />);
+    const header = screen.getByTestId('header001');
+    expect(header).toHaveTextContent(title);
   });
 });
