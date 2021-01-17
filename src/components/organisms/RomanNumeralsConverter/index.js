@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../../atoms/Input';
 import ConversionResult from '../../molecules/ConversionResult';
@@ -16,10 +16,10 @@ const INSTRUCTION = `
 const Converter = ({ id }) => {
   const [result, setResult] = useState('');
 
-  const handleChange = input => {
+  const handleChange = useCallback(input => {
     if (!isNaN(input)) return setResult(RomanNumerals.toRoman(+input));
     if (typeof input === 'string') setResult(RomanNumerals.fromRoman(input));
-  };
+  }, []);
 
   return (
     <>
