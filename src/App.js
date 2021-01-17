@@ -1,5 +1,4 @@
 import RomanNumeralsConverter from './components/RomanNumeralsConverter';
-import './App.css';
 
 function App() {
   return (
