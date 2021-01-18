@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Input from '../../atoms/Input';
 import ConversionResult from '../../molecules/ConversionResult';
 import WidgetHeader from '../../molecules/WidgetHeader';
-import RomanNumerals from '../../../lib/RomanNumerals';
+import RomanNumerals from '../../../lib/roman-numerals';
 import './styles.css';
 
 const INTRO = 'Welcome to the Roman Numerals Converter.';
@@ -16,10 +16,10 @@ const INSTRUCTION = `
 const Converter = ({ id }) => {
   const [result, setResult] = useState('');
 
-  const handleChange = input => {
+  const handleChange = useCallback(input => {
     if (!isNaN(input)) return setResult(RomanNumerals.toRoman(+input));
     if (typeof input === 'string') setResult(RomanNumerals.fromRoman(input));
-  };
+  }, []);
 
   return (
     <>
