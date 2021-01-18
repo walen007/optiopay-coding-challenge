@@ -1,4 +1,4 @@
-import RomanNumerals from './RomanNumerals';
+import RomanNumerals from './roman-numerals.js';
 
 const onlyNums = 'Error: Please enter only numbers.';
 const onlyRoman =

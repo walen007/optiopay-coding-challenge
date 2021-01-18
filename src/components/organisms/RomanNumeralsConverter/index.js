@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../../atoms/Input';
 import ConversionResult from '../../molecules/ConversionResult';
 import WidgetHeader from '../../molecules/WidgetHeader';
-import RomanNumerals from '../../../lib/RomanNumerals';
+import RomanNumerals from '../../../lib/roman-numerals';
 import './styles.css';
 
 const INTRO = 'Welcome to the Roman Numerals Converter.';
