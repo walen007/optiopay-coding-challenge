@@ -4,7 +4,7 @@ import Input from '../../atoms/Input';
 import ConversionResult from '../../molecules/ConversionResult';
 import WidgetHeader from '../../molecules/WidgetHeader';
 import RomanNumerals from '../../../lib/roman-numerals';
-import { INTRO, INSTRUCTION } from '../../../common/constants';
+import constants from '../../../common/constants';
 import './styles.css';
 
 const Converter = ({ id }) => {
@@ -17,7 +17,10 @@ const Converter = ({ id }) => {
 
   return (
     <>
-      <WidgetHeader intro={INTRO} instruction={INSTRUCTION} />
+      <WidgetHeader
+        intro={constants.INTRO}
+        instruction={constants.INSTRUCTION}
+      />
       <div id={id} data-testid={id} className="converter">
         <Input
           placeholder="Enter integer or Roman numeral"
